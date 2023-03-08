@@ -12,9 +12,12 @@ const Users = sequelize.define('users', {
     type: Sequelize.STRING,
   },
   status: {
-    type: Sequelize.STRING,
+      type: Sequelize.ENUM("active", "disabled"),
   },
   url_image: {
+    type: Sequelize.STRING,
+  },
+  otp: {
     type: Sequelize.STRING,
   }
 }, {

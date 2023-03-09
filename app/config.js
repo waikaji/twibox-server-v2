@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
+  serverApi: process.env.SERVER_API,
   dbName: process.env.DB_NAME,
   dbUsername: process.env.DB_USERNAME,
   dbPassword: process.env.DB_PASSWORD,

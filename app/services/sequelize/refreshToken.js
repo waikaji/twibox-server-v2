@@ -22,7 +22,7 @@ const getUserRefreshToken = async (req) => {
 
   const token = createJWT({ payload: createTokenUser(userCheck) });
 
-  return token;
+  return { email: payload.email, token};
 }
 
 module.exports = { createUserRefreshToken, getUserRefreshToken };

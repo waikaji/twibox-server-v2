@@ -2,13 +2,6 @@ const Sequelize = require('sequelize');
 const sequelize = require('../../../db');
 
 const Downloaders = sequelize.define('downloaders', {
-  id_user: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: 'users',
-      key: 'id'
-    }
-  },
   id_campaign: {
     type: Sequelize.INTEGER,
     references: {
@@ -16,7 +9,8 @@ const Downloaders = sequelize.define('downloaders', {
       key: 'id'
     }
   }
-});
+},
+{ timestamps: true });
 
 Downloaders.sync();
 

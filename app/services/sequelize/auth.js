@@ -69,6 +69,7 @@ const register = async (req) => {
     password: hashedPassword,
     status: 'disabled',
     otp: Math.floor(Math.random() * 9999),
+    url: 'uploads/avatar/default.jpg'
   });
 
   await otpMail(email, result);
@@ -93,7 +94,7 @@ const activateUser = async (req) => {
     { where: { email } }
   )
 
-  delete result.password;
+  delete result.dataValues.password;
 
   return result;
 
